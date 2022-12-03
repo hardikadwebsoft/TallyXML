@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <Company>Nop Solutions, Ltd</Company>
+	  <Authors>Nop Solutions, Ltd</Authors>
+	  <PackageLicenseUrl></PackageLicenseUrl>
+	  <PackageProjectUrl>https://www.nopcommerce.com/</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/nopSolutions/nopCommerce</RepositoryUrl>
+	  <RepositoryType>Git</RepositoryType>
+	  <OutputPath>..\..\Presentation\Nop.Web\Plugins\Widgets.TallyXML</OutputPath>
+	  <OutDir>$(OutputPath)</OutDir>
+	  <!--Set this parameter to true to get the dlls copied from the NuGet cache to the output of your project.
+    You need to set this parameter to true if your plugin has a nuget package 
+    to ensure that the dlls copied from the NuGet cache to the output of your project-->
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <None Remove="logo.png" />
+	  <None Remove="plugin.json" />
+	  <None Remove="Views\AdminView.cshtml" />
+	  <None Remove="Views\_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Content Include="logo.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="plugin.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Views\AdminView.cshtml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Views\_ViewImports.cshtml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="DotNetZip" Version="1.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj" />
+	  <ProjectReference Include="..\..\Libraries\Nop.Data\Nop.Data.csproj" />
+	  <ProjectReference Include="..\..\Libraries\Nop.Services\Nop.Services.csproj" />
+	  <ProjectReference Include="..\..\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
+	  <ProjectReference Include="..\..\Presentation\Nop.Web\Nop.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Compile Update="Infrastructure\RouteProvider.cs">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Compile>
+  </ItemGroup>
+
+</Project>

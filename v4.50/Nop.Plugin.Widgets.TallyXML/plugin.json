@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "TallyXML",
+  "SystemName": "Widgets.TallyXML",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Adwebsoft team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.TallyXML.dll",
+  "Description": "This plugin exports orders to the master and voucher tally xml files"
+}
